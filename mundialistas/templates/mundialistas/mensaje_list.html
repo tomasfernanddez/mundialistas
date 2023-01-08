@@ -1,0 +1,14 @@
+{% extends 'mundialistas/base.html' %}
+
+{% block contenido %}
+<ul>
+{% for mensaje in object_list %}
+    <li>
+        {{mensaje.nombre}} - {{mensaje.enviado_el}}
+        <a href="{% url 'mundialistas-mensajes-detalle' mensaje.id %}">Ver</a>
+        <a href="{% url 'mundialistas-mensajes-borrar' mensaje.id %}">Borrar</a>
+    </li>
+{% endfor %}
+<a href="{% url 'mundialistas-listar' %}"><input type="button" value="Volver" class="button" /></a>
+</ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'mundialistas/base.html' %}
+
+{% block contenido %}
+<h1>¿Está seguro que quiere borrar el post {{object.titulo}}?</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Si" class="button">
+    <a href="{% url 'mundialistas-listar' %}"><input type="button" value="No" class="button" /></a>
+</form>
+{% endblock %}

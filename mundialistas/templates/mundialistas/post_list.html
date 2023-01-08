@@ -1,0 +1,23 @@
+{% extends 'mundialistas/base.html' %}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+    <a href="{% url 'mundialistas-crear' %}">Crear Post</a>
+    <a href="{% url 'mundialistas-avatars-actualizar' user.avatar.id %}">Actualizar Avatar</a>
+    <a href="{% url 'mundialistas-users-actualizar' user.id %}">Actualizar Perfil</a>
+    <a href="{% url 'mundialistas-mensajes-listar' %}">Mensajes</a>
+{% endif %}
+<ul>
+{% for post in object_list %}
+    <li>
+        {{post.titulo}} - {{post.publicado_el}}
+        {% if user.is_authenticated %} 
+            <a href="{% url 'mundialistas-borrar' post.id %}">Borrar</a>
+            <a href="{% url 'mundialistas-actualizar' post.id %}">Actualizar</a>
+        {% endif %}   
+        <a href="{% url 'mundialistas-detalle' post.id %}">Ver</a>
+    </li>
+{% endfor %}
+</ul>
+<a href="{% url 'mundialistas-index' %}"><input type="button" value="Página Principal" class="button" /></a>
+{% endblock %}

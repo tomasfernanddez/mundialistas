@@ -1,0 +1,9 @@
+{% extends 'mundialistas/base.html' %}
+{% block contenido %}
+<form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Actualizar">
+    <a href="{% url 'mundialistas-listar' %}"><input type="button" value="Volver" class="button" /></a>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "mundialistas/base.html" %}
+
+{% block contenido %}
+    <h1>{{object.titulo}}</h1>
+    <h3>{{object.sub_titulo}}</h3>
+    <div>
+        <img height="512" src="{{object.imagen.url}}">
+    </div>
+    <div>
+        {{object.texto}}
+    </div>
+    <a href="{% url 'mundialistas-listar' %}"><input type="button" value="Volver" class="button" /></a>
+    <a href="{% url 'mundialistas-index' %}"><input type="button" value="Página Principal" class="button" /></a>
+{% endblock %}

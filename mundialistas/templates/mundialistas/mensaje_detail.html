@@ -1,0 +1,11 @@
+{% extends "mundialistas/base.html" %}
+
+{% block contenido %}
+    <h1>{{object.nombre}} - {{object.email}}</h1>
+    <h5>{{object.enviado_el}}</h5>
+    <div>
+        {{object.texto}}
+    </div>
+    <a href="{% url 'mundialistas-listar' %}"><input type="button" value="Volver" class="button" /></a>
+    <a href="{% url 'mundialistas-mensajes-borrar' mensaje.id %}"><input type="button" value="Borrar" class="button" /></a>
+{% endblock %}
