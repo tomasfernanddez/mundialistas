@@ -3,7 +3,7 @@
 <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Enviar">
     <a href="{% url 'mundialistas-listar' %}"><input type="button" value="Volver" class="button" /></a>
+    <input type="submit" value="Enviar">
 </form>
 {% endblock %}

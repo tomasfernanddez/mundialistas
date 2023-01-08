@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qtr3)-6xp7rg@wg$sxl91d%hw$4bpoe1jgygpnyv8_j8+f^s*k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -124,7 +124,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = "ejemplo-dos-login"
+LOGIN_URL = "mundialistas-login"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "media/"
